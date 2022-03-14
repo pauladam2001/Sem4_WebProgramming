@@ -1,0 +1,44 @@
+.main-img {
+    height: 50vh;
+    width: 50vw;
+    margin-left: 25vw;
+}
+
+.container {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#pic1, #pic2, #pic3, #pic4, #pic5 {
+    cursor: pointer;
+    padding-right: 150px;
+}
+
+#main1, #main2, #main3, #main4, #main5 {
+    display: none;
+}
+
+#pic1:hover + #main1 {
+    display: block;
+}
+
+#pic2:hover + #main2 {
+    display: block;
+}
+
+#pic3:hover + #main3 {
+    display: block;
+}
+
+#pic4:hover + #main4 {
+    display: block;
+}
+
+#pic5:hover + #main5 {
+    display: block;
+}
+
+.thumbnails {
+    padding-top: 15vh;
+    display: flex;
+}

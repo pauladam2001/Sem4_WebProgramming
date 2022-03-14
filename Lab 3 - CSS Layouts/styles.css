@@ -1,0 +1,290 @@
+body {
+    font-family: 'Varela Round', sans-serif;
+    background: #eee;
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+
+ul {
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-top: 0px;
+    font-size: 12.5px;
+}
+
+.hero {
+    background: url(assets/tp-banner.jpg);
+    min-height: 410px;
+    padding-top: 0px;
+    margin-bottom: 35px;
+}
+
+.header {
+    padding: 9px 0px;
+}
+
+div {
+    display: block;
+}
+
+.header-right {
+    float: right;
+}
+
+.header ul li {
+    margin: 0px;
+    padding: 0px 8px;
+    list-style: none;
+    display: inline;
+}
+
+.logo {
+    width: 100%;
+    text-align: center;
+    padding: 25px 0px 30px 0px;
+    margin: 0px;
+}
+
+.hero h4 {
+    font-size: 24px;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+    margin: 0px;
+    font-weight: 400;
+}
+
+.search-box {
+    margin: 0 auto;
+    border: none;
+    padding: 0px;
+    border-radius: 15px;
+    width: 50vw;
+}
+
+.search-box input {
+    width: 100vw;
+    max-width: 100%;
+    font-size: 16px;
+    height: 40px;
+    border: 1px solid #fff;
+    padding-left: 15px;
+    border-radius: 15px;
+}
+
+.banner-links {
+    padding-top: 20px;
+    width: 100%;
+    text-align: center;
+    margin: 0px 0px 10px 0px;
+    font-size: 18px;
+}
+
+span {
+    padding-right: 30px;
+}
+
+#banner {
+    width: 75%;
+    border-radius: 8px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+.no-padding {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.cards-container {
+    margin-bottom: 35px;
+}
+
+.heading-title {
+    padding-top: 15px;
+    font-size: 22px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    margin-left: 13%;
+    font-weight: 400;
+    color: black;
+}
+
+p span {
+    padding-right: 0;
+}
+
+h1:after {                          /* the line ater Prime Packs */
+    content: "";
+    display: inline-block;
+    height: 0.3em;
+    vertical-align: bottom;
+    width: 73%;
+    margin-right: -100%;
+    border-top: 0.5px solid gray;
+}
+
+.card-container {
+    width: 25%;
+    float: left;
+    box-sizing: border-box;
+    padding-left: 50px;
+    padding-right: 10px;
+}
+
+.prime-pack {
+    background: #fff;
+    padding: 0px!important;         /* it will override ALL previous styling rules for that specific property on that element */
+    margin: 0px 0px 20px 0px;
+    border: 1px solid #eee;
+}
+
+.rounded {
+    border-radius: 3pt;
+}
+
+.rounded-img {
+    border-top-left-radius: 3pt;
+    border-top-right-radius: 3pt;
+    border-bottom-left-radius: 0pt!important;
+    border-bottom-right-radius: 0pt!important;
+    width: 100%;
+}
+
+.ribbon span {
+    position: relative;
+    display: block;
+    text-align: center;
+    background: #f0506e;
+    color: #fff;
+    font-size: 13px;
+    line-height: 1;
+    padding: 9px 0px 0px;
+    border-top-right-radius: 4px;
+    width: 75px;
+}
+
+.ribbon {
+    position: absolute;
+    margin-top: -6px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 205px;
+}
+
+.ribbon span:before, .ribbon span:after {
+    position: absolute;
+    content: "";
+}
+
+.ribbon span:before {
+    height: 6px;
+    width: 6px;
+    left: -6px;
+    top: 0;
+    background: #000;
+    border-radius: 8px 0px 0 0;
+}
+
+.ribbon:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 42px solid transparent;
+    border-right: 34px solid transparent;
+    border-top: 10px solid #f0506e;
+}
+
+.card-body {
+    padding: 5pt 10pt 10pt 10pt!important;
+    color: black;
+}
+
+.card-body h4 {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+    height: 42px;
+    margin: 0px 0px 10px 0px;
+    padding: 0px;
+    line-height: 22px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.videos-details {
+    width: 100%;
+    font-size: 13px!important;
+    padding: 4px 0px!important;
+    margin: 5px 0px!important;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.videos-details span {
+    float: right;
+}
+
+p {
+    color: #333;
+}
+
+.ebook-price {
+    font-size: 13px;
+    color: rgba(0,0,0,.80);
+    text-align: left;
+    line-height: 20px;
+    padding-left: 0px;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+.ebook-price b {
+    font-size: 18px;
+    color: rgba(0,0,0,.80);
+    font-weight: 600!important;
+}
+
+.price {
+    padding-right: 2px;
+}
+
+.actual-price {
+    color: #f00;
+    text-decoration: line-through;
+}
+
+.ebook-discount, .ebook-discount b span {
+    color: #248a0f;
+    font-weight: normal;
+}
+
+.ebook-discount span {
+    font-size: 12px;
+    color: rgba(0,0,0,.80);
+    padding-right: 2px;
+}
+
+.ebook-discount .ebook-off {
+    display: inline!important;
+    font-size: 11px;
+    color: #fff;
+    background: #989898;
+    padding: 3px 3px 2px 3px;
+}
+
+.btn-success {
+    background: linear-gradient(to left, #3f8830, #46a033);
+    color: #fff;
+    text-align: center;
+    padding: 3px 10px;
+    margin: 2px 0px 0px 0px;
+    border: 1px solid #3f8830;
+    border-radius: 4px;
+    cursor: pointer;
+}

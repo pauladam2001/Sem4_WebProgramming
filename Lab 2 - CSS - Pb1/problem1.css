@@ -1,0 +1,76 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding-top: 20vh;
+    background: rgba(0, 255, 255);
+}
+
+button {
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #C02525;
+    font-weight: 800;
+}
+
+.button-effect {
+    padding: 1em 2em;
+    border: 2px solid #DE8B8B;
+    border-radius: 1em;
+    background: #C37171;
+    transform-style: preserve-3d;
+    transition: all 200ms;     /* the button goes down a little */
+}
+
+.button-effect::after {              /* The ::before selector inserts something before the content of each selected element(s). */
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #C60C0C;  /* the second layer */
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px #DE8B8B, 0 0.75em 0 0 #FF0000;    /* the last layer */
+    transform: translate3d(0, 0.75em, -1em); /* ca sa nu se suprapuna*/
+    transition: all 175ms;
+}
+
+.button-effect:hover {
+    transform: translate(0em, 0.75em);  /* the button goes down effect */
+}
+
+.button-effect:hover::after {
+    transform: translate3d(0, 0, -1em); /* the shadows go up */
+    box-shadow: 0 0 0 2px #F6BEBE, 0 0.25em 0 0 #F6BEBE;  /* the shadow goes up */
+}
+
+
+.button-effect2 {
+    margin-top: 15vh;
+    background: hsl(340deg 100% 32%);
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+.front {
+    display: block;
+    padding: 20px 50px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: #DE8B8B;
+    transform: translateY(-6px); /* the button goes down */
+}
+
+.button-effect2:hover .front {
+    transform: translateY(-1px); /* the shadow goes up */
+}
