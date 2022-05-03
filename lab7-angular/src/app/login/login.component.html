@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>News Service</title>
+</head>
+
+<body>
+
+  <div class="login-page">
+    <div class="form">
+
+      <form class="login-form" [formGroup]="loginForm">
+
+        <input type="text" placeholder="username" name="username" formControlName="username" required />
+        <input type="password" placeholder="password" name="password" formControlName="password" required />
+
+        <input class="submit" type="submit" name="login" value="Login" (click)="onLogin()">
+
+        <button class="message" routerLink="{{routerRegisterLink}}">Not registered? Create an account</button>
+
+      </form>
+
+    </div>
+  </div>
+
+</body>
+
+</html>

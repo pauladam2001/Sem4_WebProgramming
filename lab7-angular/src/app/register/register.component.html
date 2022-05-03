@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>News Service</title>
+</head>
+
+<body>
+
+    <div class="login-page">
+        <div class="form">
+
+            <form class="register-form" [formGroup]="registerForm">
+
+                <input type="text" placeholder="username" name="username" formControlName="username" required />
+                <input type="text" placeholder="email" name="email" formControlName="email" required />
+                <input type="password" placeholder="password" name="password" formControlName="password" required />
+                <input type="password" placeholder="confirm password" name="confirm_password"
+                    formControlName="confirm_password" required />
+
+                <input class="submit" type="submit" name="register" value="Register" (click)="onRegister()">
+
+                <button class="message" routerLink="{{routerLoginLink}}">Already registered? Sign In</button>
+
+            </form>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

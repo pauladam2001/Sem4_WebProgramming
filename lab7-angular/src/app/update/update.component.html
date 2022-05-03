@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>News Service</title>
+</head>
+
+<body>
+
+  <div class="login-page">
+    <div class="form">
+
+      <form class="register-form" #f="ngForm" name="theForm" (submit)="updateNews(f)">
+
+        <div style="margin-bottom: 15px;">
+          {{newsToUpdateTitle}}
+        </div>
+
+        <input type="text" placeholder="title" name="title" value="<?= $title ?>" required
+          [(ngModel)]="singleNews.title" />
+        <input type="text" placeholder="description" name="description" value="<?= $description ?>" required
+          [(ngModel)]="singleNews.content" />
+        <input type="text" placeholder="producer" name="producer" value="<?= $producer ?>" required
+          [(ngModel)]="singleNews.producer" />
+        <input type="text" placeholder="category" name="category" value="<?= $category ?>" required
+          [(ngModel)]="singleNews.category" />
+
+        <input class="submit" type="submit" name="create" value="Update News">
+
+      </form>
+
+    </div>
+  </div>
+
+</body>
+
+</html>

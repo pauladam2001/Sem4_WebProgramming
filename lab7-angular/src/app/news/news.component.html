@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>News Service</title>
+</head>
+
+<body>
+  <div style="float: left;">
+    <div id="previous-filter" *ngIf="lastFilter">
+      {{lastFilter}}
+    </div>
+  </div>
+
+  <div style="float: right;">
+    <form class="form" style=" height: 46px; padding: 1px;">
+      <button *ngIf="!isLoggedIn" routerLink="{{routerLoginLink}}" class="submit" type="submit" name="login"
+        value="Log In">Log In</button>
+      <button *ngIf="isLoggedIn" class="submit" type="submit" name="logout" value="Log Out" (click)="logOutUser()">Log
+        Out</button>
+    </form>
+  </div>
+
+  <div *ngIf="isLoggedIn" style="float: right;">
+    <form class="form" style=" height: 46px; padding: 1px;">
+      <input routerLink="{{routerAddLink}}" class="submit" type="submit" name="new" value="Add News">
+    </form>
+  </div>
+
+  <div>
+    <div id="main">
+
+      <h1> News </h1>
+      <div style="float: left;">
+
+        <select id="category-filter" [(ngModel)]='selectedOptionCategory'>
+          <option *ngFor="let category of categoriesArray">{{category}}</option>
+        </select>
+
+        <button class="filter-by-category" (click)="filterByCategory()"> Filter </button>
+
+      </div>
+
+      <div style="float: right;">
+
+        <select id="date-filter" [(ngModel)]='selectedOptionDate'>
+          <option *ngFor="let date of datesArray">{{date}}</option>
+        </select>
+
+        <button class="filter-by-date" (click)="filterByDate()"> Filter </button>
+
+      </div>
+
+      <br />
+      <br />
+
+      <div id=" news">
+
+        <div style="margin-bottom: 75px; border-top: 1px solid #ddd;" *ngFor="let news of newsArray">
+          <b>
+            <h2 style="margin-left: 20px; margin-right: 20px;">{{news.title}}</h2>
+          </b>
+          <h4 style="margin-left: 20px; text-align: left; text-indent: 50px;">{{news.content}}</h4>
+          <h5 style="margin-left: 20px; text-align: left;">{{news.producer}}, {{news.category}}, {{news.date}}</h5>
+          <button routerLink="{{routerUpdateLink}}" *ngIf="checkBelongsToUser(news.user_id)"
+            style="margin-bottom: 50px;" class="edit" type="submit" name="edit" value="'.$id.'"
+            (click)="putNewsTitleInStorage(news.title)"> Edit </button>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
