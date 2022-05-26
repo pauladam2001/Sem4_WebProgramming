@@ -1,0 +1,86 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>News Service</title>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ("username" in sessionStorage) {
+                var temp = JSON.parse(sessionStorage["username"]);
+
+                $.get("/NewsHome/GetNews", { username: temp.username },
+                    function (data, status) {
+                        $("#maindiv").html(data);
+                    });
+
+                $.get("/NewsHome/GetCategories", function (data, status) {
+                    $("#category-filter").html(data);
+                });
+
+                $.get("/NewsHome/GetDates", function (data, status) {
+                    $("#date-filter").html(data);
+                });
+
+                $("#add").click(function () {
+                    $(location).prop('href', '/Add/Index');
+                });
+
+                $(".filter-by-category").click(function () {
+                    let filter_by_category = $("#category-filter").find(":selected").text();
+                    $.get("/NewsHome/GetNewsByCategory", { category: filter_by_category, username: temp.username },
+                        function (data, status) {
+                            $("#maindiv").html(data);
+                        });
+                });
+
+                $(".filter-by-date").click(function () {
+                    let filter_by_date = $("#date-filter").find(":selected").text();
+                    $.get("/NewsHome/GetNewsByDate", { date: filter_by_date, username: temp.username },
+                        function (data, status) {
+                            $("#maindiv").html(data);
+                        });
+                });
+            }
+            else {
+                $(location).prop('href', '/Login/Index');
+            }
+        });
+
+        function logout() {
+            sessionStorage.clear();
+            $(location).prop('href', '/Login/Index');
+        }
+
+        function setSession(clicked_id) {
+            sessionStorage.setItem("oldTitle", document.getElementById(clicked_id).value);
+        }
+
+        function setDateAsPrevious() {
+            document.getElementById("previous-filter").innerHTML = "Previously used: Date filter";
+        }
+
+        function setCategoryAsPrevious() {
+            document.getElementById("previous-filter").innerHTML = "Previously used: Category filter";
+        }
+    </script>
+</head>
+<body>
+    <h3>Welcome!</h3>
+    News:
+    <div id="maindiv"></div><br />
+    <br />
+    <div id="previous-filter"></div>
+    <select id="category-filter"></select>
+    <button class="filter-by-category" onclick="setCategoryAsPrevious()">Filter</button>
+    <select id="date-filter"></select>
+    <button class="filter-by-date" onclick="setDateAsPrevious()">Filter</button>
+    <input style="padding-bottom: 10px" class="btn btn-secondary" type="button" id="add" value="Add news" />
+    <input style="padding-bottom: 10px" class="btn btn-secondary" type="button" id="logout" value="Log out" onclick="logout()" />
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Update News</title>
+</head>
+<body>
+    <script>
+        function myFunction() {
+            document.getElementById("IDOldtitle").value = sessionStorage.getItem("oldTitle");
+        }
+    </script>
+    <div>
+        <form action="/Update/Update" method="GET">
+            Title : <input type="text" id="IDtitle" name="title" /> <br />
+            Content : <input type="text" id="IDcontent" name="content" /> <br />
+            Producer : <input type="text" id="IDproducer" name="producer" /> <br />
+            Category : <input type="text" id="IDcategory" name="category" /> <br />
+            <input type="hidden" id="IDOldtitle" name="oldTitle" /> <br />
+            <input type="submit" value="Update news" onclick="myFunction()" />
+        </form>
+    </div>
+</body>
+</html>
